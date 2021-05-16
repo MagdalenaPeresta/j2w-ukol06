@@ -1,19 +1,32 @@
 package cz.czechitas.java2webapps.ukol6.controller;
 
+import cz.czechitas.java2webapps.ukol6.service.CitatyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
-import java.util.Random;
 
 /**
  *
  */
 @Controller
 public class CitatyController {
+  private final CitatyService service;
 
-  private final List<String> seznamCitatu;
+
+  @Autowired
+  public CitatyController(CitatyService service) {
+    this.service = service;
+  }
+
+
+  @GetMapping("/")
+  public ModelAndView nahodnyCitat() {
+    ModelAndView modelAndView = new ModelAndView("citat");
+    return modelAndView;
+  }
+
+  /*private final List<String> seznamCitatu;
   private final Random random;
 
   public CitatyController() {
@@ -36,5 +49,6 @@ public class CitatyController {
     ModelAndView modelAndView = new ModelAndView("citat");
     modelAndView.addObject("citat", seznamCitatu.get(index));
     return modelAndView;
-  }
+  }*/
+
 }
