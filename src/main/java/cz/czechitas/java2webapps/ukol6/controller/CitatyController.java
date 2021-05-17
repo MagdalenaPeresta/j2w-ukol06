@@ -23,6 +23,7 @@ public class CitatyController {
   @GetMapping("/")
   public ModelAndView nahodnyCitat() {
     ModelAndView modelAndView = new ModelAndView("citat");
+    modelAndView.addObject("citat", service.nahodnyCitat());
     return modelAndView;
   }
 

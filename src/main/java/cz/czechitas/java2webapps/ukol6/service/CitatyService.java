@@ -15,9 +15,9 @@ public class CitatyService {
         this.repository = repository;
     }
 
- public String nahodnyCitat (CitatyRepository, NahodneCisloService) {
-        String Citat = get
-        return nahodnyCitat(CitatyRepository)
+ public String nahodnyCitat () {
+
+        return repository.citat(service.dejNahodneCislo(repository.pocetCitatu()));
 
 
 

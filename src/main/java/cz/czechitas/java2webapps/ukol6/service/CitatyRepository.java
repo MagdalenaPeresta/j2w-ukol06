@@ -6,10 +6,10 @@ import java.util.List;
 
 @Service
 public class CitatyRepository {
-    private List<String> seznamCitatu;
+    public final List<String> seznamCitatu;
 
 
-    public List<String> CitatyRepository() {
+    public CitatyRepository() {
         this.seznamCitatu = List.of(
                 "Debugging /de·bugh·ing/ (verb): The Classic Mystery Game where you are the detective, the victim, and the murderer.",
                 "A user interface is like a joke. If you have to explain it, it's not that good.",
@@ -20,9 +20,16 @@ public class CitatyRepository {
                 "Programmer (noun.): A machine that turns coffee into code.",
                 "Real programmers count from 0."
         );
-return seznamCitatu;
+
     }
 
+    public int pocetCitatu (){
+        return seznamCitatu.size();
+    }
+
+    public String citat(int poradi){
+        return seznamCitatu.get(poradi);
+    }
     public CitatyRepository(List<String> seznamCitatu) {
         this.seznamCitatu = seznamCitatu;
     }

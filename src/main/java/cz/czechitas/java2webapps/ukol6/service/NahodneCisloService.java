@@ -1,5 +1,6 @@
 package cz.czechitas.java2webapps.ukol6.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
@@ -8,14 +9,14 @@ import java.util.Random;
 public class NahodneCisloService {
 
     private final Random random;
-
-    public NahodneCisloService(Random random) {
-        this.random = random;
+    @Autowired
+    public NahodneCisloService() {
+        this.random = new Random();
     }
 
     public int dejNahodneCislo(int horniMez) {
-        int index = random.nextInt(7);
-        return index;
+
+        return random.nextInt(horniMez);
     }
 
 
